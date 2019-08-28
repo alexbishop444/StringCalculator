@@ -18,22 +18,29 @@ import java.util.stream.IntStream;
 public class TestClass {
     public int Add(String... num) {
         int sum = 0;
-        String tostring = Arrays.toString(num);
-//        System.out.println(tostring);
-        char[] checknum = tostring.toCharArray();
-//        System.out.println(checknum);
-        if(num[0].equals("") && num.length < 2) {
-            return sum;
-        } else {
-            for (char arg : checknum) {
-                if (Character.isDigit(arg)) {
-                    sum += IntStream.of(Character.getNumericValue(arg)).sum();
-                }
+        for (String arg : num) {
+            if (arg.contains("-")) {
+                throw new IllegalArgumentException("Throws exception with Negatives not allowed: -1, -3");
+        }
             }
 
-            return sum;
+            String tostring = Arrays.toString(num);
+//            System.out.println(tostring);
+//        System.out.println(tostring);
+            char[] checknum = tostring.toCharArray();
+//        System.out.println(checknum);
+            if (num[0].equals("") && num.length < 2) {
+                return sum;
+            } else {
+                for (char arg : checknum) {
+                    if (Character.isDigit(arg)) {
+                        sum += IntStream.of(Character.getNumericValue(arg)).sum();
+                    }
+                }
+
+                return sum;
+            }
         }
-    }
     @Test
     public void Return0() {
         int actual = Add("");
@@ -68,6 +75,18 @@ public class TestClass {
     public void regexTest2() {
         int actual = Add("//;\n1;2");
         int expected = 3;
+        Assert.assertEquals(expected,actual);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void negativeNumbers() {
+        int actual = Add("-1,2,-3");
+        String expected = "Throws exception with Negatives not allowed: -1, -3 ";
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void bigerNumbers() {
+        int actual = Add("1000,1001,2");
+        int expected = 2;
         Assert.assertEquals(expected,actual);
     }
 }
