@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df666b2-e458-41c1-9da9-a0eaee3ed8ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestClass.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/TestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+            <state relative-caret-position="188">
+              <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -184,29 +183,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566950087279</updated>
-      <workItem from="1566950090555" duration="9762000" />
+      <workItem from="1566950090555" duration="11668000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestClass - 2019.08.28 at 14h 24m 59s.xml">
-      <configuration name="TestClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestClass - 2019.08.28 at 14h 25m 03s.xml">
-      <configuration name="TestClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestClass - 2019.08.28 at 14h 25m 24s.xml">
-      <configuration name="TestClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestClass - 2019.08.28 at 14h 26m 16s.xml">
-      <configuration name="TestClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestClass - 2019.08.28 at 14h 26m 44s.xml">
-      <configuration name="TestClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestClass - 2019.08.28 at 14h 26m 55s.xml">
-      <configuration name="TestClass" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestClass - 2019.08.28 at 14h 30m 14s.xml">
       <configuration name="TestClass" configurationId="JUnit" />
     </history-entry>
@@ -219,9 +200,27 @@
     <history-entry file="TestClass - 2019.08.28 at 14h 38m 32s.xml">
       <configuration name="TestClass" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestClass - 2019.08.28 at 14h 48m 49s.xml">
+      <configuration name="TestClass" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestClass - 2019.08.28 at 14h 51m 45s.xml">
+      <configuration name="TestClass" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestClass - 2019.08.28 at 14h 52m 54s.xml">
+      <configuration name="TestClass" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestClass - 2019.08.28 at 15h 37m 55s.xml">
+      <configuration name="TestClass" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestClass - 2019.08.28 at 15h 42m 33s.xml">
+      <configuration name="TestClass" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestClass - 2019.08.28 at 15h 43m 04s.xml">
+      <configuration name="TestClass" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9762000" />
+    <option name="totallyTimeSpent" value="11668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="967" extended-state="6" />
@@ -286,8 +285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/TestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+        <state relative-caret-position="188">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
