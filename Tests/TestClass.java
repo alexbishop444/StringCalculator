@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 //public int total(ArrayList<Card> playerDeck) {
@@ -17,17 +18,21 @@ import java.util.stream.IntStream;
 public class TestClass {
     public int Add(String... num) {
         int sum = 0;
-        String tostring = num.toString();
+        String tostring = Arrays.toString(num);
+//        System.out.println(tostring);
         char[] checknum = tostring.toCharArray();
+//        System.out.println(checknum);
         if(num[0].equals("") && num.length < 2) {
             return sum;
-        }
-        for (String arg : num) {
-            int converted = Integer.parseInt(arg);
-            sum += IntStream.of(converted).sum();
+        } else {
+            for (char arg : checknum) {
+                if (Character.isDigit(arg)) {
+                    sum += IntStream.of(Character.getNumericValue(arg)).sum();
+                }
+            }
 
+            return sum;
         }
-        return sum;
     }
     @Test
     public void Return0() {
@@ -55,8 +60,14 @@ public class TestClass {
     }
     @Test
     public void regexTest() {
-        int actual = Add("1,2\n3");
+        int actual = Add("3\n5\n3,9");
         int expected = 20;
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void regexTest2() {
+        int actual = Add("//;\n1;2");
+        int expected = 3;
         Assert.assertEquals(expected,actual);
     }
 }
