@@ -1,5 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
+import java.util.regex.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
@@ -21,26 +23,26 @@ public class TestClass {
         for (String arg : num) {
             if (arg.contains("-")) {
                 throw new IllegalArgumentException("Throws exception with Negatives not allowed: -1, -3");
-        }
             }
+        }
 
-            String tostring = Arrays.toString(num);
+        String tostring = Arrays.toString(num);
 //            System.out.println(tostring);
 //        System.out.println(tostring);
-            char[] checknum = tostring.toCharArray();
+        char[] checknum = tostring.toCharArray();
 //        System.out.println(checknum);
-            if (num[0].equals("") && num.length < 2) {
-                return sum;
-            } else {
-                for (char arg : checknum) {
-                    if (Character.isDigit(arg)) {
-                        sum += IntStream.of(Character.getNumericValue(arg)).sum();
-                    }
+        if (num[0].equals("") && num.length < 2) {
+            return sum;
+        } else {
+            for (char arg : checknum) {
+                if (Character.isDigit(arg)) {
+                    sum += IntStream.of(Character.getNumericValue(arg)).sum();
                 }
-
-                return sum;
             }
+
+            return sum;
         }
+    }
     @Test
     public void Return0() {
         int actual = Add("");
@@ -87,6 +89,25 @@ public class TestClass {
     public void bigerNumbers() {
         int actual = Add("1000,1001,2");
         int expected = 2;
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void delimiters() {
+        int actual = Add("//[***]\n1***2***3");
+        int expected = 6;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void delimitersMultiple() {
+        int actual = Add("//[*][%]\n1*2%3");
+        int expected = 6;
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void delimitersLongerThanOneChar() {
+        int actual = Add("//[***][#][%]\n1***2#3%4");
+        int expected = 10;
         Assert.assertEquals(expected,actual);
     }
 }
