@@ -1,113 +1,81 @@
 import org.junit.Assert;
 import org.junit.Test;
-import java.util.regex.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.IntStream;
 
-//public int total(ArrayList<Card> playerDeck) {
-//        Integer sum = 0;
-//        for (Card item : playerDeck) {
-//        if ((item.getValue() == 11) && (IntStream.of(item.value).sum() < 22)) {
-//        item.setValue(1);
-//        System.out.println("value changed to 1");
-//        }
-//        sum += IntStream.of(item.value).sum();
-//        }
-//        return sum;
-//        }
+import java.util.List;
 
 public class TestClass {
-    public int Add(String... num) {
-        int sum = 0;
-        for (String arg : num) {
-            if (arg.contains("-")) {
-                throw new IllegalArgumentException("Throws exception with Negatives not allowed: -1, -3");
-            }
-        }
-
-        String tostring = Arrays.toString(num);
-//            System.out.println(tostring);
-//        System.out.println(tostring);
-        char[] checknum = tostring.toCharArray();
-//        System.out.println(checknum);
-        if (num[0].equals("") && num.length < 2) {
-            return sum;
-        } else {
-            for (char arg : checknum) {
-                if (Character.isDigit(arg)) {
-                    sum += IntStream.of(Character.getNumericValue(arg)).sum();
-                }
-            }
-
-            return sum;
-        }
-    }
+    Calculator add = new Calculator();
     @Test
     public void Return0() {
-        int actual = Add("");
+        int actual = add.Add("");
         int expected = 0;
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void returnsNumber() {
-        int actual = Add("1");
+        int actual = add.Add("1");
         int expected = 1;
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void addsTwoNumbers() {
-        int actual = Add("2","2");
+        int actual = add.Add("2","2");
         int expected = 4;
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void addsMultipleNumbers() {
-        int actual = Add("3","5","3","9");
+        int actual = add.Add("3","5","3","9");
         int expected = 20;
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void regexTest() {
-        int actual = Add("3\n5\n3,9");
+        int actual = add.Add("3\n5\n3,9");
         int expected = 20;
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void regexTest2() {
-        int actual = Add("//;\n1;2");
+        int actual = add.Add("//;\n1;2");
         int expected = 3;
         Assert.assertEquals(expected,actual);
     }
     @Test(expected = IllegalArgumentException.class)
     public void negativeNumbers() {
-        int actual = Add("-1,2,-3");
+        int actual = add.Add("-1,2,-3");
         String expected = "Throws exception with Negatives not allowed: -1, -3 ";
         Assert.assertEquals(expected,actual);
     }
     @Test
-    public void bigerNumbers() {
-        int actual = Add("1000,1001,2");
+    public void biggerNumbers() {
+        int actual = add.Add("1000,1001,2");
         int expected = 2;
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void delimiters() {
-        int actual = Add("//[***]\n1***2***3");
+        int actual = add.Add("//[***]\n1***2***3");
         int expected = 6;
         Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void delimitersMultiple() {
-        int actual = Add("//[*][%]\n1*2%3");
+        int actual = add.Add("//[*][%]\n1*2%3");
         int expected = 6;
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void delimitersLongerThanOneChar() {
-        int actual = Add("//[***][#][%]\n1***2#3%4");
+        int actual = add.Add("//[***][#][%]\n1***2#3%4");
         int expected = 10;
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void delimitersWithNumbers() {
+        int actual = add.Add("//[*1*][%]\n1*1*2%3");
+        int expected = 6;
         Assert.assertEquals(expected,actual);
     }
 }
